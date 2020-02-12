@@ -1,0 +1,80 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    background: linear-gradient(to right, #2c3e50, #3498db);
+}
+
+.navigation_navbar{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.navigation_logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navigation_items ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation_items li {
+    padding: 0.1rem;
+    margin-top: 49px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.navigation_items a {
+    text-decoration: none;
+}
+
+.btn {
+    background-color: var(--background-color);
+    color: white;
+    font-weight: bold;
+    padding: .6em 1em;
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+
+    --background-color: transparent;
+    --border-size: 2px;
+}
+
+.btn.btn-underline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--border-size);
+    background-color: #b90606;
+    transition: transform 250ms ease-in-out;
+    transform: scaleX(0);
+}
+
+.btn.btn-underline:hover::before,
+.btn.btn-underline:focus::before {
+    transform: scaleX(1);
+}
+
